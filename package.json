@@ -1,0 +1,34 @@
+{
+  "name": "stoplight-widget",
+  "version": "1.0.0",
+  "description": "Floating desktop stoplight status widget",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev":   "electron . --dev",
+    "build-win": "electron-builder --win",
+    "build-mac": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.stoplight.widget",
+    "productName": "Stoplight",
+    "directories": { "output": "dist" },
+    "files": ["**/*", "!dist/**"],
+    "win": {
+      "target": "nsis",
+      "icon": "../assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "../assets/icon.icns",
+      "category": "public.app-category.productivity"
+    }
+  },
+  "dependencies": {
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}
